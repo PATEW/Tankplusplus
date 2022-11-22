@@ -1,0 +1,5 @@
+# ninja log v5
+2	244	6907858151018879	tester.exe	e4b371bc7617fccf
+128	420	6907951130472900	tank.exe	7fa352cfdae9da8e
+1	251	6907955986096998	CMakeFiles/Tankplusplus.dir/src/main.cpp.obj	ff730a1baac23be3
+253	526	6907955988870888	Tankplusplus.exe	1f76de8bd7fcaec1
