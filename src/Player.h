@@ -5,6 +5,7 @@
 #include "raylib.h"
 #include "Pellet.h"
 #include "Block.h"
+#include "Enemy.h"
 #include <vector>
 
 class Player {
@@ -15,7 +16,7 @@ private:
     Color cursorColor;
 public:
     void checkMovement();
-    std::vector<Pellet> checkPellet(Vector2 input_cursorPosition, Vector2 input_screenDimensions, std::vector<Block> blocksVec);
+    std::vector<Pellet> checkPellet(Vector2 input_cursorPosition, Vector2 input_screenDimensions, std::vector<Block> blocksVec, std::vector<Enemy>*& enemiesVec);
 
     // g&s
     Vector2 getPosition();

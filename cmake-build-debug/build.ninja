@@ -84,6 +84,20 @@ build CMakeFiles/Tankplusplus.dir/src/BlockGenerator.cpp.obj: CXX_COMPILER__Tank
   OBJECT_DIR = CMakeFiles\Tankplusplus.dir
   OBJECT_FILE_DIR = CMakeFiles\Tankplusplus.dir\src
 
+build CMakeFiles/Tankplusplus.dir/src/Enemy.cpp.obj: CXX_COMPILER__Tankplusplus_Debug C$:/Users/clay/Documents/raylib_dev/Tankplusplus/src/Enemy.cpp || cmake_object_order_depends_target_Tankplusplus
+  DEP_FILE = CMakeFiles\Tankplusplus.dir\src\Enemy.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  INCLUDES = -IC:/Users/clay/Documents/raylib_dev/Tankplusplus/include
+  OBJECT_DIR = CMakeFiles\Tankplusplus.dir
+  OBJECT_FILE_DIR = CMakeFiles\Tankplusplus.dir\src
+
+build CMakeFiles/Tankplusplus.dir/src/EnemyGenerator.cpp.obj: CXX_COMPILER__Tankplusplus_Debug C$:/Users/clay/Documents/raylib_dev/Tankplusplus/src/EnemyGenerator.cpp || cmake_object_order_depends_target_Tankplusplus
+  DEP_FILE = CMakeFiles\Tankplusplus.dir\src\EnemyGenerator.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  INCLUDES = -IC:/Users/clay/Documents/raylib_dev/Tankplusplus/include
+  OBJECT_DIR = CMakeFiles\Tankplusplus.dir
+  OBJECT_FILE_DIR = CMakeFiles\Tankplusplus.dir\src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Tankplusplus
@@ -92,9 +106,9 @@ build CMakeFiles/Tankplusplus.dir/src/BlockGenerator.cpp.obj: CXX_COMPILER__Tank
 #############################################
 # Link the executable Tankplusplus.exe
 
-build Tankplusplus.exe: CXX_EXECUTABLE_LINKER__Tankplusplus_Debug CMakeFiles/Tankplusplus.dir/src/main.cpp.obj CMakeFiles/Tankplusplus.dir/src/Player.cpp.obj CMakeFiles/Tankplusplus.dir/src/Pellet.cpp.obj CMakeFiles/Tankplusplus.dir/src/Block.cpp.obj CMakeFiles/Tankplusplus.dir/src/BlockGenerator.cpp.obj
+build Tankplusplus.exe: CXX_EXECUTABLE_LINKER__Tankplusplus_Debug CMakeFiles/Tankplusplus.dir/src/main.cpp.obj CMakeFiles/Tankplusplus.dir/src/Player.cpp.obj CMakeFiles/Tankplusplus.dir/src/Pellet.cpp.obj CMakeFiles/Tankplusplus.dir/src/Block.cpp.obj CMakeFiles/Tankplusplus.dir/src/BlockGenerator.cpp.obj CMakeFiles/Tankplusplus.dir/src/Enemy.cpp.obj CMakeFiles/Tankplusplus.dir/src/EnemyGenerator.cpp.obj
   FLAGS = -g
-  LINK_LIBRARIES = -lraylib  -lopengl32  -lgdi32  -lwinmm  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_LIBRARIES = -lraylib  -lopengl32  -lgdi32  -lwinmm  -lstdc++  -static-libgcc  -static-libstdc++  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   LINK_PATH = -LC:/Users/clay/Documents/raylib_dev/Tankplusplus/lib
   OBJECT_DIR = CMakeFiles\Tankplusplus.dir
   POST_BUILD = cd .
