@@ -1,3 +1,0 @@
-C:/Users/clay/Documents/raylib_dev/Tankplusplus/cmake-build-debug/CMakeFiles/Tankplusplus.dir
-C:/Users/clay/Documents/raylib_dev/Tankplusplus/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/clay/Documents/raylib_dev/Tankplusplus/cmake-build-debug/CMakeFiles/rebuild_cache.dir
