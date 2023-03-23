@@ -3,7 +3,6 @@
 #include <cmath>
 #include <iostream>
 #include <vector>
-using namespace std;
 
 void Player::checkMovement() {
     // Keys
@@ -14,7 +13,7 @@ void Player::checkMovement() {
 }
 
 
-std::vector<Pellet> Player::checkPellet(Vector2 input_cursorPosition, Vector2 input_screenDimensions, std::vector<Block> blocksVec) {
+std::vector<Pellet> Player::checkPellet(Vector2 input_cursorPosition, Vector2 input_screenDimensions, std::vector<Block> blocksVec, std::vector<Enemy>*& enemiesVecPtr) {
 
     if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
         Pellet pellet;
@@ -51,6 +50,22 @@ std::vector<Pellet> Player::checkPellet(Vector2 input_cursorPosition, Vector2 in
                 }
             }
         }
+        // collision with enemies (Sorry this is smelly)
+        std::vector<Enemy>* newEnemiesVec = new std::vector<Enemy>;
+
+        for (Enemy enemy : *enemiesVecPtr) {
+            if (!(CheckCollisionCircles({pelletVec[i].getPosition().x, pelletVec[i].getPosition().y}, pelletVec[i].getRadius(), {enemy.getX(), enemy.getY()}, enemy.getRadius()))) {
+                newEnemiesVec->push_back(enemy);
+            }
+        }
+
+        std::vector<Enemy>* oldEnemiesVecPtr = enemiesVecPtr;
+
+        enemiesVecPtr = newEnemiesVec;
+
+        delete oldEnemiesVecPtr;
+
+        // set original pointer value of enemiesVec to newEnemiesVec
 
     }
     return pelletVec;
