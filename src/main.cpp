@@ -15,6 +15,7 @@ int main(void)
     InitWindow(screenDimensions.x, screenDimensions.y, "Tankplusplus");
 
     Texture2D texture = LoadTexture("../resources/images/raylib_logo.png");
+    Texture2D blockTexture = LoadTexture("../resources/images/testBlock.png");
 
     Vector2 cursorPosition = {-100.0f, -100.0f };
     HideCursor();                       // Hide cursor (replaced by in-game cursor)
@@ -24,6 +25,10 @@ int main(void)
     Player player1;
     player1.setPosition({(float)screenDimensions.x / 2, (float)screenDimensions.y / 2 });
     player1.setColors(GREEN, RAYWHITE);
+
+    Player player2;
+    player2.setPosition({(float)screenDimensions.x / 7, (float)screenDimensions.y / 2 });
+    player2.setColors(RED, ORANGE);
 
 
     //Level ===
@@ -50,9 +55,13 @@ int main(void)
         //----------------------------------------------------------------------------------
         // Handle Players
         player1.checkMovement();
+        player2.checkMovement();
+
         //----------------------------------------------------------------------------------
         // Handle Pellets
         std::vector<Pellet> p1PelVec = player1.checkPellet(cursorPosition, screenDimensions, blocksVec, enemiesVecPtr);
+        std::vector<Pellet> p2PelVec = player2.checkPellet(cursorPosition, screenDimensions, blocksVec, enemiesVecPtr);
+
 
 
         // Draw ===
@@ -77,15 +86,23 @@ int main(void)
         DrawCircleV(player1.getPosition(), 50, player1.getPlayerColor());
         DrawCircleV(cursorPosition, 40, player1.getCursorColor());
 
+        DrawCircleV(player2.getPosition(), 50, player2.getPlayerColor());
+        DrawCircleV(cursorPosition, 40, player2.getCursorColor());
+
 
         for (int i = 0; i < static_cast<int>(p1PelVec.size()); i++) {
             DrawCircleV(p1PelVec[i].getPosition(), p1PelVec[i].getRadius(), WHITE);
         }
+        for (int i = 0; i < static_cast<int>(p2PelVec.size()); i++) {
+            DrawCircleV(p2PelVec[i].getPosition(), p2PelVec[i].getRadius(), BLACK);
+        }
 
         DrawLine(player1.getPosition().x, player1.getPosition().y, cursorPosition.x, cursorPosition.y, player1.getCursorColor());
+        DrawLine(player2.getPosition().x, player2.getPosition().y, cursorPosition.x, cursorPosition.y, player2.getCursorColor());
+
 
         //Image test
-        DrawTexture(texture, screenDimensions.x - texture.width, screenDimensions.y - texture.height, WHITE);
+        DrawTexture(blockTexture, screenDimensions.x - texture.width, screenDimensions.y - texture.height, WHITE);
 
         EndDrawing();
         //----------------------------------------------------------------------------------
