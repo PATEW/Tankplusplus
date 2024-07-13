@@ -1,2 +1,2 @@
 # Tankplusplus
-Small game about tanks made with C++ using the raylib library.
+Small game about tanks created to learn help me learn C++. Mainly uses the raylib library.
